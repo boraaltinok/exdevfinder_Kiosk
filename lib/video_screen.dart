@@ -12,12 +12,15 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _VideoScreenState extends State<VideoScreen> {
+  late VideoController _videoController;
+
+
   @override
   void initState() {
     // TODO: implement initState
 
-    Get.find<VideoController>().videoPlayerController.initialize();
     super.initState();
+    _videoController = Get.put(VideoController());
   }
 
   @override

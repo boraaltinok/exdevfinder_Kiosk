@@ -6,7 +6,7 @@ class VideoController extends GetxController {
   final Rx<bool> _isFullScreenMode = false.obs;
   final Rx<bool> _selectedVideoFinished = false.obs;
   late Rx<VideoPlayerController> _videoPlayerController =
-      VideoPlayerController.network('https://www.fluttercampus.com/video.mp4')
+      VideoPlayerController.network('https://www.fluttercampus.com/video.mp4',)
           .obs;
 
   final Rx<String> _currentPageName = "".obs;
@@ -24,24 +24,27 @@ class VideoController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
+    super.onInit();
 
     _initializeVideoPlayerController();
     _videoPlayerController.value.addListener(_addVideoListener);
-    super.onInit();
   }
 
   void setCurrentPageName({required String pageName}) {
     _currentPageName.value = pageName;
   }
 
-  void _initializeVideoPlayerController() {
+  Future<void> _initializeVideoPlayerController() async {
     _videoPlayerController.value =
-        VideoPlayerController.asset("assets/video1.mp4");
-    _videoPlayerController.value.initialize().then((_) {
+        VideoPlayerController.asset("assets/video_final1.mp4");
+    await _videoPlayerController.value.initialize().then((_) async {
       //_videoPlayerController.value.setLooping(true);
-      _videoPlayerController.value.play();
-      _videoPlayerController.value.addListener(_addVideoListener);
+
     });
+
+    await _videoPlayerController.value.play();
+    _videoPlayerController.value.addListener(_addVideoListener);
+
   }
 
   void _addVideoListener() {
@@ -75,31 +78,33 @@ class VideoController extends GetxController {
     if (!isFullScreen) {
       //if the previous video is over show the overview video
       print("inside if");
-      changeAndPlayVideo(videoName: 'video1.mp4');
+      changeAndPlayVideo(videoName: 'video_final1.mp4');
     } else {
       print("inside else");
       playTheVideo();
     }
   }
 
-  void playTheVideo() {
-    _videoPlayerController.value.play();
+  Future<void> playTheVideo() async {
+    await _videoPlayerController.value.play();
   }
 
   void pauseTheVideo() {
     _videoPlayerController.value.pause();
   }
 
-  void changeAndPlayVideo({required String videoName}) {
+  Future<void> changeAndPlayVideo({required String videoName}) async {
     _videoPlayerController.value.pause();
     _videoPlayerController.value.dispose();
 
     _videoPlayerController.value =
         VideoPlayerController.asset("assets/$videoName");
-    _videoPlayerController.value.initialize().then((_) {
+
+    await _videoPlayerController.value.initialize().then((_) {
       //_videoPlayerController.value.setLooping(true);
-      playTheVideo();
-      _videoPlayerController.value.addListener(_addVideoListener);
+
     });
+    playTheVideo();
+    _videoPlayerController.value.addListener(_addVideoListener);
   }
 }

@@ -16,13 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String txtButton1 = "Overview of our app";
+  final String txtButton1 = "ExDev nedir?";
 
-  final String txtButton2 = "How do we calculate the expert?";
+  final String txtButton2 = "ExDev nasıl kullanılır?";
 
-  final String txtButton3 = "Usage by real companies";
+  final String txtButton3 = "ExDev nasıl expert önerir?";
 
-  final String txtButton4 = "Graph Structure Visualization";
+  final String txtButton4 = "ExDev ile şirketinizi optimize edin";
 
   @override
   void initState() {
@@ -44,140 +44,143 @@ class _HomePageState extends State<HomePage> {
                 height: 0,
                 width: 0,
               ),
-              secondChild: Container(
-                width: Get.width * 2 / 5,
-                height: Get.height,
-                color: Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(flex: 1, child: SizedBox()),
-                    Expanded(
-                        flex: 2,
-                        child: InkWell(
-                          onTap: () {
-                            Get.find<VideoController>()
-                                .changeAndPlayVideo(videoName: "video1.mp4");
-                            Get.find<VideoController>()
-                                .setIsFullScreenMode(isFullScreen: true);
-                            Get.find<VideoController>()
-                                .setCurrentPageName(pageName: txtButton1);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(25)),
-                            width: Get.width * 2 / 5,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(txtButton1, style: TextStyleUtility.buttonTextStyle,),
-                                Lottie.asset(
-                                  'animations/overview_lottie.json',
-                                  height: 300,
-                                  reverse: true,
-                                  repeat: true,
-                                )
-                              ],
+              secondChild: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  width: Get.width * 2 / 5,
+                  height: Get.height,
+                  color: Colors.white,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(flex: 1, child: SizedBox()),
+                      Expanded(
+                          flex: 2,
+                          child: InkWell(
+                            onTap: () {
+                              Get.find<VideoController>()
+                                  .changeAndPlayVideo(videoName: "video_final1.mp4");
+                              Get.find<VideoController>()
+                                  .setIsFullScreenMode(isFullScreen: true);
+                              Get.find<VideoController>()
+                                  .setCurrentPageName(pageName: txtButton1);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  borderRadius: BorderRadius.circular(25)),
+                              width: Get.width * 2 / 5,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(txtButton1, style: TextStyleUtility.buttonTextStyle,),
+                                  /*Lottie.asset(
+                                    'animations/overview_lottie.json',
+                                    height: 300,
+                                    reverse: true,
+                                    repeat: true,
+                                  )*/
+                                ],
+                              ),
                             ),
-                          ),
-                        )),
-                    Expanded(flex: 1, child: SizedBox()),
-                    Expanded(
-                        flex: 2,
-                        child: InkWell(
-                          onTap: () {
-                            Get.find<VideoController>()
-                                .changeAndPlayVideo(videoName: "video2.mp4");
-                            Get.find<VideoController>()
-                                .setIsFullScreenMode(isFullScreen: true);
-                            Get.find<VideoController>()
-                                .setCurrentPageName(pageName: txtButton2);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(25)),
-                            width: Get.width * 2 / 5,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(txtButton2, style: TextStyleUtility.buttonTextStyle),
-                                Lottie.asset(
-                                  'animations/calculation_lottie.json',
-                                  height: 100,
-                                  reverse: true,
-                                  repeat: true,
-                                )
-                              ],
+                          )),
+                      Expanded(flex: 1, child: SizedBox()),
+                      Expanded(
+                          flex: 2,
+                          child: InkWell(
+                            onTap: () {
+                              Get.find<VideoController>()
+                                  .changeAndPlayVideo(videoName: "video_final2.mp4");
+                              Get.find<VideoController>()
+                                  .setIsFullScreenMode(isFullScreen: true);
+                              Get.find<VideoController>()
+                                  .setCurrentPageName(pageName: txtButton2);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  borderRadius: BorderRadius.circular(25)),
+                              width: Get.width * 2 / 5,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(txtButton2, style: TextStyleUtility.buttonTextStyle),
+                                  /*Lottie.asset(
+                                    'animations/calculation_lottie.json',
+                                    height: 100,
+                                    reverse: true,
+                                    repeat: true,
+                                  )*/
+                                ],
+                              ),
                             ),
-                          ),
-                        )),
-                    Expanded(flex: 1, child: SizedBox()),
-                    Expanded(
-                        flex: 2,
-                        child: InkWell(
-                          onTap: () {
-                            Get.find<VideoController>()
-                                .changeAndPlayVideo(videoName: "video1.mp4");
-                            Get.find<VideoController>()
-                                .setIsFullScreenMode(isFullScreen: true);
-                            Get.find<VideoController>()
-                                .setCurrentPageName(pageName: txtButton3);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(25)),
-                            width: Get.width * 2 / 5,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(txtButton3, style: TextStyleUtility.buttonTextStyle),
-                                Lottie.asset(
-                                  'animations/company_usage_lottie.json',
-                                  height: 300,
-                                  reverse: true,
-                                  repeat: true,
-                                )
-                              ],
+                          )),
+                      Expanded(flex: 1, child: SizedBox()),
+                      Expanded(
+                          flex: 2,
+                          child: InkWell(
+                            onTap: () {
+                              Get.find<VideoController>()
+                                  .changeAndPlayVideo(videoName: "video_final3.mp4");
+                              Get.find<VideoController>()
+                                  .setIsFullScreenMode(isFullScreen: true);
+                              Get.find<VideoController>()
+                                  .setCurrentPageName(pageName: txtButton3);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  borderRadius: BorderRadius.circular(25)),
+                              width: Get.width * 2 / 5,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(txtButton3, style: TextStyleUtility.buttonTextStyle),
+                                  /*Lottie.asset(
+                                    'animations/company_usage_lottie.json',
+                                    height: 300,
+                                    reverse: true,
+                                    repeat: true,
+                                  )*/
+                                ],
+                              ),
                             ),
-                          ),
-                        )),
-                    Expanded(flex: 1, child: SizedBox()),
-                    Expanded(
-                        flex: 2,
-                        child: InkWell(
-                          onTap: () {
-                            Get.find<VideoController>()
-                                .changeAndPlayVideo(videoName: "video2.mp4");
-                            Get.find<VideoController>()
-                                .setIsFullScreenMode(isFullScreen: true);
-                            Get.find<VideoController>()
-                                .setCurrentPageName(pageName: txtButton4);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(25)),
-                            width: Get.width * 2 / 5,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(txtButton4, style: TextStyleUtility.buttonTextStyle),
-                                Lottie.asset(
-                                  'animations/graph_visualization_lottie.json',
-                                  height: 300,
-                                  reverse: true,
-                                  repeat: true,
-                                )
-                              ],
+                          )),
+                      Expanded(flex: 1, child: SizedBox()),
+                      Expanded(
+                          flex: 2,
+                          child: InkWell(
+                            onTap: () {
+                              Get.find<VideoController>()
+                                  .changeAndPlayVideo(videoName: "video_final4.mp4");
+                              Get.find<VideoController>()
+                                  .setIsFullScreenMode(isFullScreen: true);
+                              Get.find<VideoController>()
+                                  .setCurrentPageName(pageName: txtButton4);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  borderRadius: BorderRadius.circular(25)),
+                              width: Get.width * 2 / 5,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(txtButton4, style: TextStyleUtility.buttonTextStyle),
+                                  /*Lottie.asset(
+                                    'animations/graph_visualization_lottie.json',
+                                    height: 300,
+                                    reverse: true,
+                                    repeat: true,
+                                  )*/
+                                ],
+                              ),
                             ),
-                          ),
-                        )),
-                    Expanded(flex: 1, child: SizedBox()),
-                  ],
+                          )),
+                      Expanded(flex: 1, child: SizedBox()),
+                    ],
+                  ),
                 ),
               ),
               crossFadeState: Get.find<VideoController>().isFullScreenMode
